@@ -29,6 +29,7 @@
 	]
 
 	onMount(() => {
+		people.sort(() => 0.5 - Math.random());
 		visible = true;
 	});
 
