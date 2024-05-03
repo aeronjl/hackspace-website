@@ -78,7 +78,7 @@
 
 		<div in:fade id="team" class="my-12 mx-4">
 			<p class="my-6 md:text-6xl text-4xl">Founding team</p>
-            <p class="my-6 text-lg lg:w-1/2">We met through the Polaris Fellowship, which has attracted some of the most exceptional, early-career scientists and technologists and fostered strong cultural bubbles in the group.</p>
+            <p class="my-6 text-lg lg:w-1/2">We met through the <a class="underline" href="https://www.polaris-fellowship.com/">Polaris Fellowship</a>, which has attracted some of the most exceptional, early-career scientists and technologists and fostered strong cultural bubbles in the group.</p>
 			<div class="mx-4 flex flex-wrap md:gap-x-12 gap-x-4 md:gap-y-12 gap-y-4 my-12 xs:justify-start justify-between">
 				<div class="sm:w-[200px] w-[100px] grid grid-cols-1 space-y-4">
                     <img src={benji} alt="Benji" class="rounded-full"/>
