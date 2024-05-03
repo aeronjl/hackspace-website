@@ -69,7 +69,7 @@
 					We’re building a space for technical work in Central London that fixes the problem.
 				</p>
                 <div class="py-6">
-                <button on:click={openForm} class="md:text-2xl text-left border py-2 pl-2 pr-4 hover:pr-24 hover:bg-amber-50 hover:text-amber-900 transition-all duration-500">
+                <button on:click={openForm} class="md:text-2xl text-left border py-2 pl-2 pr-4 md:hover:pr-24 hover:bg-amber-50 hover:text-amber-900 transition-all duration-500">
                     If you are interested in joining us, please get in touch ->
                 </button>
             </div>
@@ -79,32 +79,36 @@
 		<div in:fade id="team" class="my-12 mx-4">
 			<p class="my-6 md:text-6xl text-4xl hover:translate-x-1 transition-all duration-500">Founding team</p>
             <p class="my-6 text-lg lg:w-1/2">We met through the <a class="underline" href="https://www.polaris-fellowship.com/">Polaris Fellowship</a>, which has attracted some of the most exceptional, early-career scientists and technologists and fostered strong cultural bubbles in the group.</p>
-			<div class="mx-4 flex flex-wrap md:gap-x-12 gap-x-4 md:gap-y-12 gap-y-4 my-12 xs:justify-start justify-between">
-				<div class="sm:w-[200px] w-[100px] grid grid-cols-1 space-y-4 hover:-translate-y-1 transition-all duration-500">
+			<div class="mx-4 md:flex md:flex-wrap grid grid-cols-2 md:gap-x-12 gap-x-6 md:gap-y-12 gap-y-6 my-12 xs:justify-start justify-between">
+				<div class="sm:w-[200px] w-full grid grid-cols-1 space-y-4 hover:-translate-y-1 transition-all duration-500">
                     <img src={benji} alt="Benji" class="rounded-full"/>
 					<p class="text-center">Benji</p>
 				</div>
-                <div class="sm:w-[200px] w-[100px] grid grid-cols-1 space-y-4 hover:-translate-y-1 transition-all duration-500">
+                <div class="sm:w-[200px] w-full grid grid-cols-1 space-y-4 hover:-translate-y-1 transition-all duration-500">
                     <img src={calum} alt="Benji" class="rounded-full"/>
 					<p class="text-center">Calum</p>
 				</div>
-                <div class="sm:w-[200px] w-[100px] grid grid-cols-1 space-y-4 hover:-translate-y-1 transition-all duration-500">
+                <div class="sm:w-[200px] w-full grid grid-cols-1 space-y-4 hover:-translate-y-1 transition-all duration-500">
                     <img src={ursule} alt="Benji" class="rounded-full"/>
 					<p class="text-center">Ursule</p>
 				</div>
-                <div class="sm:w-[200px] w-[100px] grid grid-cols-1 space-y-4 hover:-translate-y-1 transition-all duration-500">
+                <div class="sm:w-[200px] w-full grid grid-cols-1 space-y-4 hover:-translate-y-1 transition-all duration-500">
                     <img src={aeron} alt="Benji" class="rounded-full"/>
 					<p class="text-center">Aeron</p>
 				</div>
-                <div class="sm:w-[200px] w-[100px] grid grid-cols-1 space-y-4 hover:-translate-y-1 transition-all duration-500">
+                <div class="sm:w-[200px] w-full grid grid-cols-1 space-y-4 hover:-translate-y-1 transition-all duration-500">
                     <img src={aaliya} alt="Benji" class="rounded-full"/>
 					<p class="text-center">Aaliya</p>
 				</div>
-                <div class="sm:w-[200px] w-[100px] grid grid-cols-1 space-y-4 hover:-translate-y-1 transition-all duration-500">
+                <div class="sm:w-[200px] w-full grid grid-cols-1 space-y-4 hover:-translate-y-1 transition-all duration-500">
                     <img src={benji} alt="Benji" class="rounded-full"/>
 					<p class="text-center">Matvey</p>
 				</div>
-                <div class="sm:w-[200px] w-[100px] grid grid-cols-1 space-y-4 hover:-translate-y-1 transition-all duration-500">
+                <div class="sm:w-[200px] w-full grid grid-cols-1 space-y-4 hover:-translate-y-1 transition-all duration-500">
+                    <img src={benji} alt="Benji" class="rounded-full"/>
+					<p class="text-center">Oliver</p>
+				</div>
+                <div class="sm:w-[200px] w-full grid grid-cols-1 space-y-4 hover:-translate-y-1 transition-all duration-500">
                     <img src={benji} alt="Benji" class="rounded-full"/>
 					<p class="text-center">Jack</p>
 				</div>
