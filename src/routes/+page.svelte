@@ -143,7 +143,7 @@
 				technologists and fostered strong cultural bubbles in the group.
 			</p>
 			<div
-				class="mx-4 my-12 grid grid-cols-2 justify-between gap-x-6 gap-y-6 xs:justify-start md:flex md:flex-wrap md:gap-x-12 md:gap-y-12"
+				class="mx-4 my-12 grid grid-cols-2 gap-x-8 gap-y-6 xs:justify-start md:flex md:flex-wrap md:gap-x-12 md:gap-y-12"
 			>
 				{#each people as person}
 				<button
