@@ -1,9 +1,4 @@
 <script lang="ts">
-    import mockup from '$lib/assets/mockup.png';
-	import mockuptwo from '$lib/assets/mockup2.png';
-	import mockupthree from '$lib/assets/mockup3.png';
-
-    let showLargeImage = false;
 </script>
 
 <svelte:head>
