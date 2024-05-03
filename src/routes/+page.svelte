@@ -5,6 +5,10 @@
 	import mockupthree from '$lib/assets/mockup3.png';
 	import { onMount } from 'svelte';
     import benji from '$lib/assets/headshots/benji.png';
+    import calum from '$lib/assets/headshots/calum.png';
+    import ursule from '$lib/assets/headshots/ursule.png';
+    import aeron from '$lib/assets/headshots/aeron.webp';
+    import aaliya from '$lib/assets/headshots/aaliya.png';
 
 	import * as Carousel from '$lib/components/ui/carousel/index.js';
 
@@ -59,6 +63,11 @@
 				<p class="my-4">
 					We’re building a space for technical work in Central London that fixes the problem.
 				</p>
+                <div class="py-6">
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSeAlNNQLhd5X4_SK5PU__lWW3ugq5Cfy57equ8MCOBqioc8SA/viewform?usp=sf_link" class="border py-2 pl-2 pr-4 hover:bg-amber-50 hover:text-amber-900 transition-all duration-500">
+                    If you are interested in joining us, please get in touch ->
+                </a>
+            </div>
 			</div>
 		</div>
 
@@ -71,19 +80,19 @@
 					<p class="text-center">Benji</p>
 				</div>
                 <div class="w-[200px] grid grid-cols-1 space-y-4">
-                    <img src={benji} alt="Benji" class="rounded-full"/>
+                    <img src={calum} alt="Benji" class="rounded-full"/>
 					<p class="text-center">Calum</p>
 				</div>
                 <div class="w-[200px] grid grid-cols-1 space-y-4">
-                    <img src={benji} alt="Benji" class="rounded-full"/>
+                    <img src={ursule} alt="Benji" class="rounded-full"/>
 					<p class="text-center">Ursule</p>
 				</div>
                 <div class="w-[200px] grid grid-cols-1 space-y-4">
-                    <img src={benji} alt="Benji" class="rounded-full"/>
+                    <img src={aeron} alt="Benji" class="rounded-full"/>
 					<p class="text-center">Aeron</p>
 				</div>
                 <div class="w-[200px] grid grid-cols-1 space-y-4">
-                    <img src={benji} alt="Benji" class="rounded-full"/>
+                    <img src={aaliya} alt="Benji" class="rounded-full"/>
 					<p class="text-center">Aaliya</p>
 				</div>
                 <div class="w-[200px] grid grid-cols-1 space-y-4">
