@@ -4,6 +4,7 @@
 	import mockuptwo from '$lib/assets/mockup2.png';
 	import mockupthree from '$lib/assets/mockup3.png';
 	import { onMount } from 'svelte';
+    import benji from '$lib/assets/headshots/benji.png';
 
 	import * as Carousel from '$lib/components/ui/carousel/index.js';
 
@@ -16,10 +17,10 @@
 
 {#if visible}
 	<div class="font-geist">
-		<div class="bg-emerald-800 py-2">
-			<div class="mb-4 flex justify-between px-4 text-sm text-emerald-50">
-				<p class="font-semibold">London Jackspace</p>
-				<div class="flex gap-x-4">
+		<div class="bg-emerald-800 py-4">
+			<div class="mb-4 flex justify-between items-center px-4 text-emerald-50">
+				<p class="">Jackspace</p>
+				<div class="flex gap-x-6">
 					<a href="#mission">Mission</a>
 					<a href="#team">Team</a>
 				</div>
@@ -27,7 +28,7 @@
 			<hr />
 			<h1
 				in:fly={{ x: -400, duration: 1000 }}
-				class="my-12 px-4 text-2xl text-emerald-50 md:text-6xl"
+				class="my-12 px-4 text-4xl text-emerald-50 md:text-6xl"
 			>
 				We are building a new centre for early-career scientists and technologists to do ambitious
 				work in Central London.
@@ -47,10 +48,10 @@
 		</div>
 
 		<div id="mission" in:fade={{ duration: 1000 }} class="border bg-amber-600 px-4 py-6 text-amber-50">
-			<p class="mb-6 text-2xl md:text-6xl">
+			<p class="mb-6 text-4xl md:text-6xl">
 				We want more exploratory scientific and technological work to happen in the UK.
 			</p>
-			<div class="text-md md:text-lg">
+			<div class="text-lg">
 				<p class="my-4 lg:w-1/2">
 					The present social and cultural environment in the UK isn’t conducive to exceptionally
 					talented, early-career scientists and technologists embarking on ambitious projects.
@@ -61,29 +62,37 @@
 			</div>
 		</div>
 
-		<div id="team" class="my-12">
-			<p class="my-6 text-2xl md:text-6xl">Founding team</p>
-			<div class="mx-4 flex flex-wrap justify-between">
-				<div class="border">
-					<p>Benji</p>
+		<div id="team" class="my-12 mx-4">
+			<p class="my-6 md:text-6xl text-4xl">Founding team</p>
+            <p class="my-6 text-lg lg:w-1/2">We met through the Polaris Fellowship, which has attracted some of the most exceptional, early-career scientists and technologists and fostered strong cultural bubbles in the group.</p>
+			<div class="mx-4 flex flex-wrap gap-x-12 gap-y-12 my-12">
+				<div class="w-[200px] grid grid-cols-1 space-y-4">
+                    <img src={benji} alt="Benji" class="rounded-full"/>
+					<p class="text-center">Benji</p>
 				</div>
-				<div>
-					<p>Calum</p>
+                <div class="w-[200px] grid grid-cols-1 space-y-4">
+                    <img src={benji} alt="Benji" class="rounded-full"/>
+					<p class="text-center">Calum</p>
 				</div>
-				<div>
-					<p>Ursule</p>
+                <div class="w-[200px] grid grid-cols-1 space-y-4">
+                    <img src={benji} alt="Benji" class="rounded-full"/>
+					<p class="text-center">Ursule</p>
 				</div>
-				<div>
-					<p>Aeron</p>
+                <div class="w-[200px] grid grid-cols-1 space-y-4">
+                    <img src={benji} alt="Benji" class="rounded-full"/>
+					<p class="text-center">Aeron</p>
 				</div>
-				<div>
-					<p>Aaliya</p>
+                <div class="w-[200px] grid grid-cols-1 space-y-4">
+                    <img src={benji} alt="Benji" class="rounded-full"/>
+					<p class="text-center">Aaliya</p>
 				</div>
-				<div>
-					<p>Matvey</p>
+                <div class="w-[200px] grid grid-cols-1 space-y-4">
+                    <img src={benji} alt="Benji" class="rounded-full"/>
+					<p class="text-center">Matvey</p>
 				</div>
-				<div>
-					<p>Jack</p>
+                <div class="w-[200px] grid grid-cols-1 space-y-4">
+                    <img src={benji} alt="Benji" class="rounded-full"/>
+					<p class="text-center">Jack</p>
 				</div>
 			</div>
 		</div>
