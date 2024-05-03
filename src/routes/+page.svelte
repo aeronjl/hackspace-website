@@ -17,6 +17,11 @@
 	onMount(() => {
 		visible = true;
 	});
+
+    function openForm(): void {
+        const url: string = "https://docs.google.com/forms/d/e/1FAIpQLSeAlNNQLhd5X4_SK5PU__lWW3ugq5Cfy57equ8MCOBqioc8SA/viewform?usp=sf_link";
+        window.open(url, '_blank');
+    }
 </script>
 
 {#if visible}
@@ -24,9 +29,9 @@
 		<div class="bg-emerald-800 py-4">
 			<div class="mb-4 flex justify-between items-center px-4 text-emerald-50">
 				<p class="">Jackspace</p>
-				<div class="flex gap-x-6">
-					<a href="#mission">Mission</a>
-					<a href="#team">Team</a>
+				<div class="flex gap-x-6 pr-4">
+					<a class="hover:underline underline-offset-4" href="#mission">Mission</a>
+					<a class="hover:underline underline-offset-4" href="#team">Team</a>
 				</div>
 			</div>
 			<hr />
@@ -64,42 +69,42 @@
 					We’re building a space for technical work in Central London that fixes the problem.
 				</p>
                 <div class="py-6">
-                <a href="https://docs.google.com/forms/d/e/1FAIpQLSeAlNNQLhd5X4_SK5PU__lWW3ugq5Cfy57equ8MCOBqioc8SA/viewform?usp=sf_link" class="border py-2 pl-2 pr-4 hover:bg-amber-50 hover:text-amber-900 transition-all duration-500">
+                <button on:click={openForm} class="md:text-2xl text-left border py-2 pl-2 pr-4 hover:bg-amber-50 hover:text-amber-900 transition-all duration-500">
                     If you are interested in joining us, please get in touch ->
-                </a>
+                </button>
             </div>
 			</div>
 		</div>
 
-		<div id="team" class="my-12 mx-4">
+		<div in:fade id="team" class="my-12 mx-4">
 			<p class="my-6 md:text-6xl text-4xl">Founding team</p>
             <p class="my-6 text-lg lg:w-1/2">We met through the Polaris Fellowship, which has attracted some of the most exceptional, early-career scientists and technologists and fostered strong cultural bubbles in the group.</p>
-			<div class="mx-4 flex flex-wrap gap-x-12 gap-y-12 my-12">
-				<div class="w-[200px] grid grid-cols-1 space-y-4">
+			<div class="mx-4 flex flex-wrap md:gap-x-12 gap-x-4 md:gap-y-12 gap-y-4 my-12 xs:justify-start justify-between">
+				<div class="sm:w-[200px] w-[100px] grid grid-cols-1 space-y-4">
                     <img src={benji} alt="Benji" class="rounded-full"/>
 					<p class="text-center">Benji</p>
 				</div>
-                <div class="w-[200px] grid grid-cols-1 space-y-4">
+                <div class="sm:w-[200px] w-[100px] grid grid-cols-1 space-y-4">
                     <img src={calum} alt="Benji" class="rounded-full"/>
 					<p class="text-center">Calum</p>
 				</div>
-                <div class="w-[200px] grid grid-cols-1 space-y-4">
+                <div class="sm:w-[200px] w-[100px] grid grid-cols-1 space-y-4">
                     <img src={ursule} alt="Benji" class="rounded-full"/>
 					<p class="text-center">Ursule</p>
 				</div>
-                <div class="w-[200px] grid grid-cols-1 space-y-4">
+                <div class="sm:w-[200px] w-[100px] grid grid-cols-1 space-y-4">
                     <img src={aeron} alt="Benji" class="rounded-full"/>
 					<p class="text-center">Aeron</p>
 				</div>
-                <div class="w-[200px] grid grid-cols-1 space-y-4">
+                <div class="sm:w-[200px] w-[100px] grid grid-cols-1 space-y-4">
                     <img src={aaliya} alt="Benji" class="rounded-full"/>
 					<p class="text-center">Aaliya</p>
 				</div>
-                <div class="w-[200px] grid grid-cols-1 space-y-4">
+                <div class="sm:w-[200px] w-[100px] grid grid-cols-1 space-y-4">
                     <img src={benji} alt="Benji" class="rounded-full"/>
 					<p class="text-center">Matvey</p>
 				</div>
-                <div class="w-[200px] grid grid-cols-1 space-y-4">
+                <div class="sm:w-[200px] w-[100px] grid grid-cols-1 space-y-4">
                     <img src={benji} alt="Benji" class="rounded-full"/>
 					<p class="text-center">Jack</p>
 				</div>
