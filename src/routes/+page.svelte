@@ -46,46 +46,46 @@
 			</div>
 		</div>
 
-		<div>
-			<div class="border bg-amber-600 text-amber-50 px-4 py-6">
-				<p class="md:text-6xl text-2xl mb-6">
-					We want more exploratory scientific and technological work to happen in the UK.
-				</p>
-
-				<p>
+		<div in:fade={{ duration: 1000 }} class="border bg-amber-600 px-4 py-6 text-amber-50">
+			<p class="mb-6 text-2xl md:text-6xl">
+				We want more exploratory scientific and technological work to happen in the UK.
+			</p>
+			<div class="text-md md:text-lg">
+				<p class="my-4 lg:w-1/2">
 					The present social and cultural environment in the UK isn’t conducive to exceptionally
 					talented, early-career scientists and technologists embarking on ambitious projects.
 				</p>
-			</div>
-			<p class="my-6">
-				We’re building a space for technical work in Central London that fixes the problem.
-			</p>
-
-			<div class="my-6">
-				<p class="my-2 font-semibold">
-					The new workspace will give the most-exceptional young scientists/technologists:
+				<p class="my-4">
+					We’re building a space for technical work in Central London that fixes the problem.
 				</p>
-				<ul class="list-inside list-disc space-y-2">
-					<li>
-						Access to a peer group; which raises ambition, provides examples of good taste,
-						encourages, and has high expectations.
-					</li>
-					<li>
-						A set of values; pro-technology, pro-progress, optimism, curiosity, non-conformity,
-						ambitiousness.
-					</li>
-					<li>
-						Tools; for laboratory science and manufacturing outside institutional constraints (e.g.
-						university IP-constraints and the permission of supervisors)
-					</li>
-					<li>Access to private knowledge; of the frontier of fields and new opportunities.</li>
-				</ul>
 			</div>
+		</div>
 
-			<p>
-				We will judge our success on whether the workspaces’ members have more ideas, enter new
-				collaborations, and start companies around their work that they otherwise wouldn’t have.
-			</p>
+		<div class="my-12">
+			<p class="my-6 text-2xl md:text-6xl">Founding team</p>
+			<div class="mx-4 flex flex-wrap justify-between">
+				<div class="border">
+					<p>Benji</p>
+				</div>
+				<div>
+					<p>Calum</p>
+				</div>
+				<div>
+					<p>Ursule</p>
+				</div>
+				<div>
+					<p>Aeron</p>
+				</div>
+				<div>
+					<p>Aaliya</p>
+				</div>
+				<div>
+					<p>Matvey</p>
+				</div>
+				<div>
+					<p>Jack</p>
+				</div>
+			</div>
 		</div>
 	</div>
 {/if}
