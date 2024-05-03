@@ -20,8 +20,8 @@
 			<div class="mb-4 flex justify-between px-4 text-sm text-emerald-50">
 				<p class="font-semibold">London Jackspace</p>
 				<div class="flex gap-x-4">
-					<a href="">Mission</a>
-					<a href="">Team</a>
+					<a href="#mission">Mission</a>
+					<a href="#team">Team</a>
 				</div>
 			</div>
 			<hr />
@@ -46,7 +46,7 @@
 			</div>
 		</div>
 
-		<div in:fade={{ duration: 1000 }} class="border bg-amber-600 px-4 py-6 text-amber-50">
+		<div id="mission" in:fade={{ duration: 1000 }} class="border bg-amber-600 px-4 py-6 text-amber-50">
 			<p class="mb-6 text-2xl md:text-6xl">
 				We want more exploratory scientific and technological work to happen in the UK.
 			</p>
@@ -61,7 +61,7 @@
 			</div>
 		</div>
 
-		<div class="my-12">
+		<div id="team" class="my-12">
 			<p class="my-6 text-2xl md:text-6xl">Founding team</p>
 			<div class="mx-4 flex flex-wrap justify-between">
 				<div class="border">
