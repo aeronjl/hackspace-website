@@ -2,6 +2,8 @@
     import mockup from '$lib/assets/mockup.png';
 	import mockuptwo from '$lib/assets/mockup2.png';
 	import mockupthree from '$lib/assets/mockup3.png';
+
+    let showLargeImage = false;
 </script>
 <div class="font-geist">
     
@@ -10,21 +12,21 @@
     <p class="my-6 mx-6 md:w-2/3 md:text-xl text-large">We’re building a space for technical work in Central London that fixes the problem.</p>
     <button class="border py-2 pl-2 pr-6 mx-6 my-4 text-left md:text-center hover:bg-black border-black hover:text-white md:hover:pr-24 transition-all duration-500 md:text-xl ">If you are interested in joining us, please get in touch -></button>
     <div class="flex-cols-3 mx-6 my-12 flex justify-center md:space-x-6 space-x-2">
-        <div in:fade={{ duration: 1000, delay: 300 }}>
+        <div>
             <img
                 alt="Artist's impression of the space 1"
                 src={mockup}
                 class="transition-all duration-1000 hover:translate-x-1"
             />
         </div>
-        <div in:fade={{ duration: 1000, delay: 600 }}>
+        <div>
             <img
                 alt="Artist's impression of the space 2"
                 src={mockuptwo}
                 class="transition-all duration-1000 hover:translate-x-1"
             />
         </div>
-        <div in:fade={{ duration: 1000, delay: 900 }}>
+        <div>
             <img
                 alt="Artist's impression of the space 3"
                 src={mockupthree}
@@ -33,4 +35,9 @@
         </div>
     </div>
 
+    {#if showLargeImage}
+    <div class="fixed inset-0 h-full w-full z-50 bg-black bg-opacity-50">
+
+    </div>
+    {/if}
 </div>
