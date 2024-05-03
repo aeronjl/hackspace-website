@@ -56,6 +56,10 @@
   }
 </script>
 
+<svelte:head>
+	<title>Jackspace</title>
+</svelte:head>
+
 {#if visible}
 	<div class="font-geist">
 		<div class="bg-emerald-900 py-4">
