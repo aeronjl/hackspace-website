@@ -2,7 +2,7 @@
 </script>
 
 <svelte:head>
-    <title>Jackspace</title>
+    <title>A new space</title>
 </svelte:head>
 
 <div class="font-serif font-light flex flex-col mx-auto items-center justify-center h-screen">
