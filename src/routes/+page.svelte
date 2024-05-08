@@ -18,7 +18,7 @@
 		<p class="">
 			A private facility in Central London for the pursuit of the <a
 				href="https://en.m.wikipedia.org/wiki/Useful_art"
-				class="underline">useful arts</a
+				class="underline" target="_blank">useful arts</a
 			>.
 		</p>
 		<p class="">
