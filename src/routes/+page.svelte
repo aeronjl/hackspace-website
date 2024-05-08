@@ -30,23 +30,23 @@
             Register your interest
         </button>
         {#if showForm}
-		<form transition:slide action="/" method="POST">
+		<form transition:slide method="POST">
 			<div class="flex flex-col mb-4">
 				<label for="name" class="mb-1">Name</label>
-				<input type="text" id="name" class="border border-black px-1" placeholder="" />
+				<input type="text" id="name" class="border border-black p-1" placeholder="" />
 			</div>
 			<div class="flex flex-col mb-4">
 				<label for="email" class="mb-1">Email</label>
-				<input type="email" id="email" class="border border-black px-1" placeholder="" />
+				<input type="email" id="email" class="border border-black p-1" placeholder="" />
 			</div>
 			<div class="flex flex-col mb-4">
 				<label for="message" class="mb-1">In 200 words or fewer, describe what you would use the space for</label
 				>
-				<textarea id="message" class="px-1 border border-black" placeholder=""></textarea>
+				<textarea id="message" class="p-1 border border-black" placeholder=""></textarea>
 			</div>
             <div class="flex flex-col mb-4">
 				<label for="message" class="mb-1">If relevant, please provide the link to an online profile or portfolio of work</label>
-                <input type="text" id="link" class="border border-black px-1" placeholder="" />
+                <input type="text" id="link" class="border border-black p-1" placeholder="" />
 			</div>
             <button class="underline">Submit</button>
 		</form>
