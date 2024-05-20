@@ -34,16 +34,16 @@
 		<form transition:fly={{easing: quintInOut, x: -10, duration: 1200}} method="POST">
 			<div class="flex flex-col mb-4">
 				<label for="name" class="mb-1">Name</label>
-				<input name="name" type="text" id="name" class="border border-black p-1" placeholder="" />
+				<input name="name" type="text" id="name" class="border border-black p-1" placeholder="" required/>
 			</div>
 			<div class="flex flex-col mb-4">
 				<label for="email" class="mb-1">Email</label>
-				<input name="email" type="email" id="email" class="border border-black p-1" placeholder="" />
+				<input name="email" type="email" id="email" class="border border-black p-1" placeholder="" required/>
 			</div>
 			<div class="flex flex-col mb-4">
 				<label for="message" class="mb-1">Describe what you would use the space for (200 words maximum)</label
 				>
-				<textarea name="message" id="message" class="p-1 border border-black" placeholder=""></textarea>
+				<textarea name="message" id="message" class="p-1 border border-black" placeholder="" required></textarea>
 			</div>
             <div class="flex flex-col mb-4">
 				<label for="message" class="mb-1">If relevant, please provide a link to an online profile or portfolio of work</label>
