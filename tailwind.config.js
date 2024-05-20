@@ -59,8 +59,6 @@ const config = {
 			},
 			fontFamily: {
 				sans: [...fontFamily.sans],
-				geist: ['Geist'],
-				geistmono: ['Geist Mono']
 			}
 		}
 	},
