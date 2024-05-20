@@ -1,8 +1,9 @@
 <script lang="ts">
 	import { cubicInOut, quintInOut } from 'svelte/easing';
-    import { slide, fly } from 'svelte/transition'
+    import { fly, fade } from 'svelte/transition'
 
     let showForm: boolean = false;
+	let success = false;
 
     const toggleForm = () => {
         showForm = !showForm;
@@ -14,7 +15,7 @@
 	<title>A new space</title>
 </svelte:head>
 
-	<div class="flex flex-col gap-y-4 px-6 font-serif max-w-[600px] mx-auto mt-24 text-sm">
+	<div in:fade class="flex flex-col gap-y-4 font-serif max-w-[600px] mx-auto mt-24 text-sm">
 		<p class="">
 			A private facility in Central London for the pursuit of the <a
 				href="https://en.m.wikipedia.org/wiki/Useful_art"

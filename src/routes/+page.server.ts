@@ -1,6 +1,7 @@
 import type { Actions } from './$types';
 import { KV_REST_API_TOKEN, KV_REST_API_URL } from '$env/static/private'
 import { createClient } from '@vercel/kv';
+import { redirect } from '@sveltejs/kit';
 
 const kv = createClient({
 	url: KV_REST_API_URL,
@@ -26,11 +27,6 @@ export const actions: Actions = {
 			link
 		});
 
-		return {
-			status: 302,
-			headers: {
-				location: '/success'
-			}
-		};
+		throw redirect(302, '/success');
 	}
 };
