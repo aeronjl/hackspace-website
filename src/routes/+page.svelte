@@ -36,7 +36,7 @@
 </script>
 
 <svelte:head>
-	<title>A new space</title>
+	<title>a new space</title>
 </svelte:head>
 
 <div in:fade class="mx-auto mt-24 flex max-w-[600px] flex-col gap-y-4 font-serif text-sm">
