@@ -65,7 +65,7 @@
 
 			<div class="mb-4 flex flex-col">
 				<label for="projectMessage" class="mb-1">What project will you be working on in the first 6 weeks?</label>
-				<small class="text-gray-500">250 words max.</small>
+				<small class="text-gray-500">(250 words max)</small>
 				<textarea name="projectMessage" id="projectMessage" class="border border-black p-1" bind:value={projectMessage} on:input={handleProjectInput} required></textarea>
 				{#if errorProject}
 					<p class="text-red-500">{errorProject}</p>
@@ -74,7 +74,7 @@
 
 			<div class="mb-4 flex flex-col">
 				<label for="interestsMessage" class="mb-1">Generally, describe your interests and what you’ve done so far.</label>
-				<small class="text-gray-500">Please focus on the work itself, not credentials! 400 words max.</small>
+				<small class="text-gray-500">Please focus on the work itself, not credentials (400 words max)</small>
 				<textarea name="interestsMessage" id="interestsMessage" class="border border-black p-1" bind:value={interestsMessage} on:input={handleInterestsInput} required></textarea>
 				{#if errorInterests}
 					<p class="text-red-500">{errorInterests}</p>
