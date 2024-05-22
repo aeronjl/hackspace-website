@@ -25,12 +25,22 @@ export const actions: Actions = {
 		}
 
 		// Server-side word count validation
-		const maxWords = 200;
-		const wordCount = projectMessage.trim().split(/\s+/).length;
+		const maxWordsProject = 250;
+		const wordCountProject = projectMessage.trim().split(/\s+/).length;
 
-		if (wordCount > maxWords) {
+		if (wordCountProject > maxWordsProject) {
 			return fail(400, {
-				error: `Your answer exceeds the maximum word limit of ${maxWords} words.`,
+				error: `Your project description exceeds the maximum word limit of ${maxWordsProject} words.`,
+				values: { name, email, projectMessage, interestsMessage } // To preserve form values
+			});
+		}
+
+		const maxWordsInterests = 400;
+		const wordCountInterests = interestsMessage.trim().split(/\s+/).length;
+
+		if (wordCountInterests > maxWordsInterests) {
+			return fail(400, {
+				error: `Your interests and background description exceeds the maximum word limit of ${maxWordsInterests} words.`,
 				values: { name, email, projectMessage, interestsMessage } // To preserve form values
 			});
 		}
