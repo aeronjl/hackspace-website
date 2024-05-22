@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { cubicInOut, quintInOut } from 'svelte/easing';
+	import { quintInOut } from 'svelte/easing';
 	import { fly, fade } from 'svelte/transition';
 
 	let showForm = false;
