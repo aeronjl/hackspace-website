@@ -74,7 +74,7 @@
 
 			<div class="mb-4 flex flex-col">
 				<label for="interestsMessage" class="mb-1">Generally, describe your interests and what you’ve done so far.</label>
-				<small class="text-gray-500">We don’t care about badges, please describe the content of the work. 400 words max.</small>
+				<small class="text-gray-500">We don’t care about badges, focus on the work itself. 400 words max.</small>
 				<textarea name="interestsMessage" id="interestsMessage" class="border border-black p-1" bind:value={interestsMessage} on:input={handleInterestsInput} required></textarea>
 				{#if errorInterests}
 					<p class="text-red-500">{errorInterests}</p>
