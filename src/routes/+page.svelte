@@ -46,7 +46,7 @@
 	<title>a new space</title>
 </svelte:head>
 
-<div in:fade class="mx-auto mt-24 flex max-w-[600px] flex-col gap-y-4 font-serif text-sm">
+<div in:fade class="mx-auto mt-24 flex max-w-[400px] flex-col gap-y-4 font-serif text-sm">
 	<p>A private facility in Central London for the pursuit of the <a href="https://en.m.wikipedia.org/wiki/Useful_art" class="underline" target="_blank">useful arts</a> (hardware, the life sciences, and AI research).</p>
 	<p>For young scientists and technologists to work, free from institutional constraints.</p>
 	<button on:click={toggleForm} class="text-left underline">Apply to become a member</button>
