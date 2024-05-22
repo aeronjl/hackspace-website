@@ -2,37 +2,44 @@
 	import { cubicInOut, quintInOut } from 'svelte/easing';
 	import { fly, fade } from 'svelte/transition';
 
-	let showForm: boolean = false;
-	let success = false;
-	const maxWords = 200;
-	let wordCount = 0;
-	let message = '';
-	let error = '';
+	let showForm = false;
+	const maxWordsProject = 250;
+	const maxWordsInterests = 400;
+	let wordCountProject = 0;
+	let wordCountInterests = 0;
+	let projectMessage = '';
+	let interestsMessage = '';
+	let errorProject = '';
+	let errorInterests = '';
 
 	const toggleForm = () => {
 		showForm = !showForm;
 	};
 
-	function countWords(text: string) {
-		return text.trim().split(/\s+/).length;
-	}
+	const countWords = (text: string) => text.trim().split(/\s+/).length;
 
-	function handleInput(event: Event) {
+	const handleProjectInput = (event: Event) => {
 		const target = event.target as HTMLTextAreaElement;
-		wordCount = countWords(target.value);
-		if (wordCount > maxWords) {
-			error = `You have exceeded the maximum word limit of ${maxWords} words.`;
-		} else {
-			error = '';
-		}
-	}
+		wordCountProject = countWords(target.value);
+		errorProject = wordCountProject > maxWordsProject
+			? `You have exceeded the maximum word limit of ${maxWordsProject} words.`
+			: '';
+	};
 
-	function handleSubmit(event: Event) {
-		if (wordCount > maxWords) {
+	const handleInterestsInput = (event: Event) => {
+		const target = event.target as HTMLTextAreaElement;
+		wordCountInterests = countWords(target.value);
+		errorInterests = wordCountInterests > maxWordsInterests
+			? `You have exceeded the maximum word limit of ${maxWordsInterests} words.`
+			: '';
+	};
+
+	const handleSubmit = (event: Event) => {
+		if (wordCountProject > maxWordsProject || wordCountInterests > maxWordsInterests) {
 			event.preventDefault();
-			alert(`Please reduce your message to ${maxWords} words or less.`);
+			alert(`Please ensure all answers are within their respective word limits.`);
 		}
-	}
+	};
 </script>
 
 <svelte:head>
@@ -40,70 +47,48 @@
 </svelte:head>
 
 <div in:fade class="mx-auto mt-24 flex max-w-[600px] flex-col gap-y-4 font-serif text-sm">
-	<p class="">
-		A private facility in Central London for the pursuit of the <a
-			href="https://en.m.wikipedia.org/wiki/Useful_art"
-			class="underline"
-			target="_blank">useful arts</a
-		>.
-	</p>
-	<p class="">For young scientists and technologists to work without institutional constraint.</p>
-	<button on:click={toggleForm} class="text-left underline"> Register your interest </button>
+	<p>A private facility in Central London for the pursuit of the <a href="https://en.m.wikipedia.org/wiki/Useful_art" class="underline" target="_blank">useful arts</a> (hardware, the life sciences, and AI research).</p>
+	<p>For young scientists and technologists to work, free from institutional constraints.</p>
+	<button on:click={toggleForm} class="text-left underline">Apply to become a member</button>
+
 	{#if showForm}
-		<form
-			on:submit={handleSubmit}
-			transition:fly={{ easing: quintInOut, x: -10, duration: 1200 }}
-			method="POST"
-		>
+		<form on:submit={handleSubmit} transition:fly={{ easing: quintInOut, x: -10, duration: 1200 }} method="POST">
 			<div class="mb-4 flex flex-col">
 				<label for="name" class="mb-1">Name</label>
-				<input
-					name="name"
-					type="text"
-					id="name"
-					class="border border-black p-1"
-					placeholder=""
-					required
-				/>
+				<input name="name" type="text" id="name" class="border border-black p-1" required />
 			</div>
+
 			<div class="mb-4 flex flex-col">
 				<label for="email" class="mb-1">Email</label>
-				<input
-					name="email"
-					type="email"
-					id="email"
-					class="border border-black p-1"
-					placeholder=""
-					required
-				/>
+				<input name="email" type="email" id="email" class="border border-black p-1" required />
 			</div>
+
 			<div class="mb-4 flex flex-col">
-				<label for="message" class="mb-1"
-					>Describe what you would use the space for (200 words maximum)</label
-				>
-				<textarea
-					name="message"
-					id="message"
-					class="border border-black p-1"
-					placeholder=""
-					bind:value={message}
-					on:input={handleInput}
-					required
-				></textarea>
-				{#if error}
-					<p class="text-red-500">{error}</p>
+				<label for="projectMessage" class="mb-1">What project will you be working on in the first 6 weeks? 250 words max.</label>
+				<textarea name="projectMessage" id="projectMessage" class="border border-black p-1" bind:value={projectMessage} on:input={handleProjectInput} required></textarea>
+				{#if errorProject}
+					<p class="text-red-500">{errorProject}</p>
 				{/if}
 			</div>
+
 			<div class="mb-4 flex flex-col">
-				<label for="message" class="mb-1"
-					>If relevant, please provide a link to an online profile or portfolio of work</label
-				>
-				<input name="link" type="text" id="link" class="border border-black p-1" placeholder="" />
+				<label for="interestsMessage" class="mb-1">Generally, describe your interests and what you’ve done so far? 400 words max.</label>
+				<small class="text-gray-500">We don’t care about badges, please describe the content of the work and help us share your excitement for it.</small>
+				<textarea name="interestsMessage" id="interestsMessage" class="border border-black p-1" bind:value={interestsMessage} on:input={handleInterestsInput} required></textarea>
+				{#if errorInterests}
+					<p class="text-red-500">{errorInterests}</p>
+				{/if}
 			</div>
+
 			<button class="underline">Submit</button>
 		</form>
 	{/if}
 </div>
 
 <style>
+	small {
+		font-size: 0.875em;
+		color: #6b7280;
+		margin-top: -0.5em;
+	}
 </style>
