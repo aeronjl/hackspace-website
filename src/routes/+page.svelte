@@ -64,7 +64,7 @@
 			</div>
 
 			<div class="mb-4 flex flex-col">
-				<label for="projectMessage" class="mb-1">What project will you be working on in the first 6 weeks? 250 words max.</label>
+				<label for="projectMessage" class="mb-1">What project will you be working on in the first 6 weeks?</label>
 				<small class="text-gray-500">250 words max.</small>
 				<textarea name="projectMessage" id="projectMessage" class="border border-black p-1" bind:value={projectMessage} on:input={handleProjectInput} required></textarea>
 				{#if errorProject}
