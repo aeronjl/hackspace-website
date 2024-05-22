@@ -13,25 +13,25 @@ export const actions: Actions = {
 		const formData = await request.formData();
 		const name = formData.get('name') as string;
 		const email = formData.get('email') as string;
-		const message = formData.get('message') as string;
-		const link = formData.get('link') as string;
+		const projectMessage = formData.get('projectMessage') as string;
+		const interestsMessage = formData.get('interestsMessage') as string;
 
 		// Check for empty fields
-		if (!name || !email || !message) {
+		if (!name || !email || !projectMessage || !interestsMessage) {
 			return fail(400, {
 				error: 'Please fill out all required fields.',
-				values: { name, email, message, link } // To preserve form values
+				values: { name, email, projectMessage, interestsMessage } // To preserve form values
 			});
 		}
 
 		// Server-side word count validation
 		const maxWords = 200;
-		const wordCount = message.trim().split(/\s+/).length;
+		const wordCount = projectMessage.trim().split(/\s+/).length;
 
 		if (wordCount > maxWords) {
 			return fail(400, {
 				error: `Your answer exceeds the maximum word limit of ${maxWords} words.`,
-				values: { name, email, message, link } // To preserve form values
+				values: { name, email, projectMessage, interestsMessage } // To preserve form values
 			});
 		}
 
@@ -42,8 +42,8 @@ export const actions: Actions = {
 		await kv.set(key, {
 			name,
 			email,
-			message,
-			link
+			projectMessage,
+			interestsMessage
 		});
 
 		throw redirect(302, '/success');
