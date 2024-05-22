@@ -52,21 +52,21 @@
 	<button on:click={toggleForm} class="text-left underline">Apply to become a member</button>
 
 	{#if showForm}
-		<form on:submit={handleSubmit} transition:fly={{ easing: quintInOut, x: -10, duration: 1200 }} method="POST">
+		<form on:submit={handleSubmit} transition:fly={{ easing: quintInOut, x: -10, duration: 1200 }} method="POST" class="mb-12">
 			<div class="mb-4 flex flex-col">
 				<label for="name" class="mb-1">Name</label>
-				<input name="name" type="text" id="name" class="border border-black p-1" required />
+				<input name="name" type="text" id="name" class="border border-black p-1 rounded" required />
 			</div>
 
 			<div class="mb-4 flex flex-col">
 				<label for="email" class="mb-1">Email</label>
-				<input name="email" type="email" id="email" class="border border-black p-1" required />
+				<input name="email" type="email" id="email" class="border border-black p-1 rounded" required />
 			</div>
 
 			<div class="mb-4 flex flex-col">
 				<label for="projectMessage" class="mb-1">What project will you be working on in the first 6 weeks?</label>
 				<small class="text-gray-500">(250 words max)</small>
-				<textarea name="projectMessage" id="projectMessage" class="border border-black p-1" bind:value={projectMessage} on:input={handleProjectInput} required></textarea>
+				<textarea name="projectMessage" id="projectMessage" class="border border-black p-1 rounded mt-1" bind:value={projectMessage} on:input={handleProjectInput} required></textarea>
 				{#if errorProject}
 					<p class="text-red-500">{errorProject}</p>
 				{/if}
@@ -75,7 +75,7 @@
 			<div class="mb-4 flex flex-col">
 				<label for="interestsMessage" class="mb-1">Generally, describe your interests and what you’ve done so far.</label>
 				<small class="text-gray-500">Please focus on the work itself, not credentials (400 words max)</small>
-				<textarea name="interestsMessage" id="interestsMessage" class="border border-black p-1" bind:value={interestsMessage} on:input={handleInterestsInput} required></textarea>
+				<textarea name="interestsMessage" id="interestsMessage" class="border border-black p-1 rounded mt-1" bind:value={interestsMessage} on:input={handleInterestsInput} required></textarea>
 				{#if errorInterests}
 					<p class="text-red-500">{errorInterests}</p>
 				{/if}
