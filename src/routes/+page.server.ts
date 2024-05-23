@@ -2,6 +2,9 @@ import type { Actions } from './$types';
 import { KV_REST_API_TOKEN, KV_REST_API_URL } from '$env/static/private';
 import { createClient } from '@vercel/kv';
 import { fail, redirect } from '@sveltejs/kit';
+import { Resend } from 'resend';
+
+const resend = new Resend('re_4jE8hQrL_JVwjRsnoMCoKGT25VwaNsH19');
 
 const kv = createClient({
 	url: KV_REST_API_URL,
@@ -54,6 +57,15 @@ export const actions: Actions = {
 			email,
 			projectMessage,
 			interestsMessage
+		});
+
+		const firstName = name.split(' ')[0];
+
+		resend.emails.send({
+			from: 'a new space <no-reply@x7f3k9z.com>',
+			to: `${email}`,
+			subject: 'Your application has been received',
+			html: `<p>Dear ${firstName},</p> <p>Thank you for applying. We are in the process of raising funds in order to be able to welcome more members. We will contact you again when we have more information.</p>`
 		});
 
 		throw redirect(302, '/success');
