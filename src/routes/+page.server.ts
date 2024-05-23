@@ -68,6 +68,13 @@ export const actions: Actions = {
 			html: `<p>Dear ${firstName},</p> <p>Thank you for applying. We are in the process of raising funds in order to be able to welcome more members. We will contact you again when we have more information.</p>`
 		});
 
+		resend.emails.send({
+			from: 'a new space <no-reply@x7f3k9z.com>',
+			to: 'ajlaffere@gmail.com',
+			subject: 'New application received',
+			html: `<p>A new application has been received from ${name} (${email}).</p> <p>Project description: ${projectMessage}</p> <p>Interests and background: ${interestsMessage}</p>`
+		})
+
 		throw redirect(302, '/success');
 	}
 };
