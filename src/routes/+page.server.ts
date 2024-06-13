@@ -3,6 +3,8 @@ import { KV_REST_API_TOKEN, KV_REST_API_URL, RESEND_API_TOKEN, ADMIN_EMAIL } fro
 import { createClient } from '@vercel/kv';
 import { fail, redirect } from '@sveltejs/kit';
 import { Resend } from 'resend';
+import { isEmail } from 'validator';
+import sanitizeHtml from 'sanitize-html';
 
 const resend = new Resend(RESEND_API_TOKEN);
 
@@ -44,7 +46,7 @@ export const actions: Actions = {
 		const email = formData.get('email')?.toString() || '';
 		const projectMessage = formData.get('projectMessage')?.toString() || '';
 		const interestsMessage = formData.get('interestsMessage')?.toString() || '';
-
+			
 		// Check for empty fields
 		if (!name || !email || !projectMessage || !interestsMessage) {
 			return fail(400, {
@@ -77,13 +79,26 @@ export const actions: Actions = {
 		const timestamp = Date.now();
 		const key = `submission-${timestamp}`;
 
+		// Validate email format
+		if (!isEmail(email)) {
+			return fail(400, {
+				error: 'Please enter a valid email address.',
+				values: { name, email, projectMessage, interestsMessage }
+			});
+		}
+
+		// Sanitize user input
+		const sanitizedName = sanitizeHtml(name);
+		const sanitizedProjectMessage = sanitizeHtml(projectMessage);
+		const sanitizedInterestsMessage = sanitizeHtml(interestsMessage);
+
 		try {
 			// Store the form data in Vercel KV
 			await kvClient.set(key, {
-				name,
+				name: sanitizedName,
 				email,
-				projectMessage,
-				interestsMessage
+				projectMessage: sanitizedProjectMessage,
+				interestsMessage: sanitizedInterestsMessage
 			});
 
 			await sendEmails(name, email, projectMessage, interestsMessage);
