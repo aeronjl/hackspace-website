@@ -1,10 +1,10 @@
 import type { Actions } from './$types';
-import { KV_REST_API_TOKEN, KV_REST_API_URL } from '$env/static/private';
+import { KV_REST_API_TOKEN, KV_REST_API_URL, RESEND_API_TOKEN } from '$env/static/private';
 import { createClient } from '@vercel/kv';
 import { fail, redirect } from '@sveltejs/kit';
 import { Resend } from 'resend';
 
-const resend = new Resend('re_4jE8hQrL_JVwjRsnoMCoKGT25VwaNsH19');
+const resend = new Resend(RESEND_API_TOKEN);
 
 const kvClient = createClient({
 	url: KV_REST_API_URL,
