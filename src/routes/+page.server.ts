@@ -48,10 +48,31 @@ export const actions: Actions = {
 		const interestsMessage = formData.get('interestsMessage')?.toString() || '';
 			
 		// Check for empty fields
-		if (!name || !email || !projectMessage || !interestsMessage) {
+		if (!name) {
 			return fail(400, {
-				error: 'Please fill out all required fields.',
-				values: { name, email, projectMessage, interestsMessage } // To preserve form values
+				error: 'Please enter your name.',
+				values: { name, email, projectMessage, interestsMessage }
+			});
+		}
+
+		if (!email) {
+			return fail(400, {
+				error: 'Please enter your email address.',
+				values: { name, email, projectMessage, interestsMessage }
+			});
+		}
+
+		if (!projectMessage) {
+			return fail(400, {
+				error: 'Please enter a project description.',
+				values: { name, email, projectMessage, interestsMessage }
+			});
+		}
+
+		if (!interestsMessage) {
+			return fail(400, {
+				error: 'Please enter a description of your interests and background.',
+				values: { name, email, projectMessage, interestsMessage }
 			});
 		}
 
