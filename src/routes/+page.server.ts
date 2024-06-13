@@ -1,5 +1,5 @@
 import type { Actions } from './$types';
-import { KV_REST_API_TOKEN, KV_REST_API_URL, RESEND_API_TOKEN } from '$env/static/private';
+import { KV_REST_API_TOKEN, KV_REST_API_URL, RESEND_API_TOKEN, ADMIN_EMAIL } from '$env/static/private';
 import { createClient } from '@vercel/kv';
 import { fail, redirect } from '@sveltejs/kit';
 import { Resend } from 'resend';
@@ -29,7 +29,7 @@ const sendEmails = async (
 
 	await resend.emails.send({
 		from: 'a new space <no-reply@x7f3k9z.com>',
-		to: 'ajlaffere@gmail.com',
+		to: ADMIN_EMAIL,
 		subject: 'New application received',
 		html: `<p>A new application has been received from ${name} (${email}).</p>
 			   <p>Project description: ${projectMessage}</p>
