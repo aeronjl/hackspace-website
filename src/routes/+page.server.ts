@@ -3,7 +3,7 @@ import { KV_REST_API_TOKEN, KV_REST_API_URL, RESEND_API_TOKEN, ADMIN_EMAIL } fro
 import { createClient } from '@vercel/kv';
 import { fail, redirect } from '@sveltejs/kit';
 import { Resend } from 'resend';
-import { isEmail } from 'validator';
+import validator from 'validator';
 import sanitizeHtml from 'sanitize-html';
 
 const resend = new Resend(RESEND_API_TOKEN);
@@ -101,7 +101,7 @@ export const actions: Actions = {
 		const key = `submission-${timestamp}`;
 
 		// Validate email format
-		if (!isEmail(email)) {
+		if (!validator.isEmail(email)) {
 			return fail(400, {
 				error: 'Please enter a valid email address.',
 				values: { name, email, projectMessage, interestsMessage }
